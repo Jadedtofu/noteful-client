@@ -18,7 +18,7 @@ export default class AddNote extends Component {
       name: e.target['note-name'].value,
       content: e.target['note-content'].value,
       folder_id: e.target['note-folder-id'].value,
-      modified: new Date(),
+      date_modified: new Date(),
     }
     fetch(`${config.API_ENDPOINT}/notes`, {
       method: 'POST',
