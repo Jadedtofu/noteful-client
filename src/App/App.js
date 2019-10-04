@@ -35,7 +35,7 @@ class App extends Component {
       })
       .then(([notes, folders]) => {
         this.setState({ notes, folders })
-        console.log(this.state)
+        // console.log(this.state)
       })
       .catch(error => {
         console.error({ error })
@@ -105,7 +105,7 @@ class App extends Component {
           />
         )}
         <Route
-          path='/notes/:noteId'
+          path='/notes/:note_id'
           component={NotePageMain}
         />
         <Route
