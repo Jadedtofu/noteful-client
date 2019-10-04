@@ -22,8 +22,8 @@ class App extends Component {
       fetch(`${config.API_ENDPOINT}/notes`),
       fetch(`${config.API_ENDPOINT}/folders`)
     ])
-      .then(([notesRes, foldersRes]) => {
-        if (!notesRes.ok)
+    .then(([notesRes, foldersRes]) => {
+      if (!notesRes.ok)
           return notesRes.json().then(e => Promise.reject(e))
         if (!foldersRes.ok)
           return foldersRes.json().then(e => Promise.reject(e))
@@ -35,6 +35,7 @@ class App extends Component {
       })
       .then(([notes, folders]) => {
         this.setState({ notes, folders })
+        console.log(this.state)
       })
       .catch(error => {
         console.error({ error })
@@ -68,7 +69,7 @@ class App extends Component {
   renderNavRoutes() {
     return (
       <>
-        {['/', '/folder/:folder_id'].map(path =>
+        {['/', '/folders/:folder_id'].map(path =>
           <Route
             exact
             key={path}
@@ -77,7 +78,7 @@ class App extends Component {
           />
         )}
         <Route
-          path='/note/:note_id'
+          path='/notes/:note_id'
           component={NotePageNav}
         />
         <Route
@@ -95,7 +96,7 @@ class App extends Component {
   renderMainRoutes() {
     return (
       <>
-        {['/', '/folder/:folder_id'].map(path =>
+        {['/', '/folders/:folder_id'].map(path =>
           <Route
             exact
             key={path}
@@ -104,7 +105,7 @@ class App extends Component {
           />
         )}
         <Route
-          path='/note/:noteId'
+          path='/notes/:noteId'
           component={NotePageMain}
         />
         <Route
