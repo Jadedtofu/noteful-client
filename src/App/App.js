@@ -35,7 +35,7 @@ class App extends Component {
       })
       .then(([notes, folders]) => {
         this.setState({ notes, folders })
-        // console.log(this.state)
+        console.log(this.state)
       })
       .catch(error => {
         console.error({ error })
@@ -69,7 +69,7 @@ class App extends Component {
   renderNavRoutes() {
     return (
       <>
-        {['/', '/folders/:folder_id'].map(path =>
+        {['/', '/folder/:folder_id'].map(path =>
           <Route
             exact
             key={path}
@@ -78,7 +78,7 @@ class App extends Component {
           />
         )}
         <Route
-          path='/notes/:note_id'
+          path='/note/:note_id'
           component={NotePageNav}
         />
         <Route
@@ -96,7 +96,7 @@ class App extends Component {
   renderMainRoutes() {
     return (
       <>
-        {['/', '/folders/:folder_id'].map(path =>
+        {['/', '/folder/:folder_id'].map(path =>
           <Route
             exact
             key={path}
@@ -105,7 +105,7 @@ class App extends Component {
           />
         )}
         <Route
-          path='/notes/:note_id'
+          path='/note/:note_id'
           component={NotePageMain}
         />
         <Route
