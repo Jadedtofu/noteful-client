@@ -19,9 +19,10 @@ export default class NoteListMain extends React.Component {
     const { folder_id } = this.props.match.params
     const { notes=[] } = this.context
     // console.log(this.context)
-    console.log(this.props.match.params)
+    // console.log(this.props.match.params)
     const notesForFolder = getNotesForFolder(notes, folder_id)
-    console.log(folder_id)
+    // console.log(folder_id)
+    console.log(notes)  // the notes aren't displaying?? 
     return (
       <section className='NoteListMain'>
         <ul>
@@ -30,7 +31,7 @@ export default class NoteListMain extends React.Component {
               <Note
                 id={note.id}
                 name={note.name}
-                modified={note.date_modified}
+                date_modified={note.date_modified}
               />
             </li>
           )}
