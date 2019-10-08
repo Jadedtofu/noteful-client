@@ -12,8 +12,9 @@ export default class NotePageMain extends React.Component {
   }
   static contextType = ApiContext
 
-  handleDeleteNote = (note_id) => {  // this isn't working?
+  handleDeleteNote = note_id => {  // this isn't working?
     this.props.history.push(`/`)
+    console.log(this.props.history)
   }
 
   render() {
