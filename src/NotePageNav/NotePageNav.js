@@ -18,9 +18,11 @@ export default class NotePageNav extends React.Component {
 
   render() {
     const { notes, folders } = this.context
-    const { noteId } = this.props.match.params
-    const note = findNote(notes, noteId) || {}
+    // console.log(this.context)
+    const { note_id } = this.props.match.params
+    const note = findNote(notes, note_id) || {}
     const folder = findFolder(folders, note.folder_id)
+    // console.log(folder)
     return (
       <div className='NotePageNav'>
         <CircleButton
