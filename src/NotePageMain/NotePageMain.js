@@ -14,13 +14,13 @@ export default class NotePageMain extends React.Component {
 
   handleDeleteNote = note_id => {  // this isn't working?
     this.props.history.push(`/`)
-    console.log(this.props.history)
+    // console.log(this.props.history)
   }
 
   render() {
     const { notes=[] } = this.context
     const { note_id } = this.props.match.params
-    console.log(this.context)
+    // console.log(this.context)
     const note = findNote(notes, note_id) || { content: '' }
     return (
       <section className='NotePageMain'>
