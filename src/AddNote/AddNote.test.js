@@ -19,7 +19,7 @@ describe(`AddNote component`, () => {
     }
   ]
 
-  it('renders the complete form', () => {
+  it.skip('renders the complete form', () => {
     const wrapper = shallow(<AddNote />)
     expect(toJson(wrapper)).toMatchSnapshot()
   })
