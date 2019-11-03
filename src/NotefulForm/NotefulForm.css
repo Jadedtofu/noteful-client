@@ -45,4 +45,17 @@
 .Noteful-form button[type="submit"]:hover {
   background-color: #29862e;
   color: white;
+  cursor: pointer;
+}
+
+.Noteful-form button:disabled {
+  background-color: #1a2027;
+  color: grey;
+  cursor: default;
+}
+
+.Noteful-form button[disabled]:hover {
+  background-color: #f81f1f;
+  color: white;
+  cursor: default;
 }
