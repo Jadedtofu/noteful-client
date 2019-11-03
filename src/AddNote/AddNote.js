@@ -55,20 +55,20 @@ export default class AddNote extends Component {
     const fieldErrors = {...this.state.validationMessages};
     let hasError = false;
 
-    if(fieldValue == null) {
+    if(fieldValue === "empty") {
       fieldErrors.noteFolder = 'Please select a folder';
       hasError = true;
     }
 
     this.setState({
       validationMessages: fieldErrors,
-      noteFolderValide: !hasError
-    }, this.formValid);
+      noteFolderValid: !hasError
+    }, this.formValid );
   }
 
   formValid() {
     this.setState({
-      formValide: this.state.noteNameValid && this.state.noteFolderValid
+      formValid: this.state.noteNameValid && this.state.noteFolderValid
     });
   }
 
@@ -127,7 +127,7 @@ export default class AddNote extends Component {
               Folder
             </label>
             <select id='note-folder-select' name='note-folder-id' onChange={e => this.updateNoteFolder(e.target.value)}>
-              <option value={null}>...</option>
+              <option value="empty">...</option>
               {folders.map(folder =>
                 <option key={folder.id} value={folder.id}>
                   {folder.name}
